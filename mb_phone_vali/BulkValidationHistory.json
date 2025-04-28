@@ -1,0 +1,259 @@
+[
+  {
+    "DateTime": "2025-04-22 22:59:07",
+    "File Name": "validated_mascol_data_phone_number_check_excel.xlsx",
+    "Records": 106499,
+    "Valid": 0,
+    "Invalid": 106499,
+    "Suspicious": 0,
+    "Status": "active"
+  },
+  {
+    "DateTime": "2025-04-22 22:47:19",
+    "File Name": "mascol_data_phone_number_check_excel.xlsx",
+    "Records": 106499,
+    "Valid": 100957,
+    "Invalid": 5542,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-22 22:36:07",
+    "File Name": "MAS_COL_COntact.csv",
+    "Records": 106499,
+    "Valid": 98870,
+    "Invalid": 7629,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-22 15:28:17",
+    "File Name": "MAS_COL_COntact.csv",
+    "Records": 106499,
+    "Valid": 98870,
+    "Invalid": 7629,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-22 15:11:35",
+    "File Name": "MAS_COL_COntact.csv",
+    "Records": 106499,
+    "Valid": 99571,
+    "Invalid": 6928,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-22 14:54:03",
+    "File Name": "MAS_COL_COntact.csv",
+    "Records": 106499,
+    "Valid": 102683,
+    "Invalid": 3816,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-21 21:43:09",
+    "File Name": "MAS_COL_COntact.csv",
+    "Records": 106499,
+    "Valid": 102683,
+    "Invalid": 3816,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-21 21:37:36",
+    "File Name": "MAS_COL_COntact.csv",
+    "Records": 106499,
+    "Valid": 102683,
+    "Invalid": 3816,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-21 21:15:04",
+    "File Name": "MAS_COL_COntact.csv",
+    "Records": 106499,
+    "Valid": 102683,
+    "Invalid": 3816,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-21 19:51:20",
+    "File Name": "Contact_TWHK1.csv",
+    "Records": 554,
+    "Valid": 524,
+    "Invalid": 30,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 19:00:05",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 527,
+    "Invalid": 27,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 18:08:10",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 527,
+    "Invalid": 27,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 17:59:16",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 527,
+    "Invalid": 27,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 17:59:11",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 527,
+    "Invalid": 27,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 17:47:09",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 527,
+    "Invalid": 27,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 17:28:20",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 527,
+    "Invalid": 27,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 17:24:20",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 74,
+    "Invalid": 480,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 17:22:00",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 535,
+    "Invalid": 19,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 16:18:11",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 535,
+    "Invalid": 19,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 16:13:12",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 74,
+    "Invalid": 480,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 16:04:28",
+    "File Name": "validated_validated_Contact.csv",
+    "Records": 554,
+    "Valid": 0,
+    "Invalid": 554,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 16:01:15",
+    "File Name": "validated_validated_Contact.csv",
+    "Records": 554,
+    "Valid": 0,
+    "Invalid": 554,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 15:58:35",
+    "File Name": "validated_Contact.csv",
+    "Records": 554,
+    "Valid": 74,
+    "Invalid": 480,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 13:16:32",
+    "File Name": "Contact.csv",
+    "Records": 554,
+    "Valid": 535,
+    "Invalid": 19,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 12:57:19",
+    "File Name": "Book3.csv",
+    "Records": 101,
+    "Valid": 101,
+    "Invalid": 0,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 12:43:12",
+    "File Name": "Book3.csv",
+    "Records": 101,
+    "Valid": 101,
+    "Invalid": 0,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 12:35:59",
+    "File Name": "Book3.csv",
+    "Records": 101,
+    "Valid": 73,
+    "Invalid": 28,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 12:26:48",
+    "File Name": "Book3.csv",
+    "Records": 101,
+    "Valid": 73,
+    "Invalid": 28,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 12:11:21",
+    "File Name": "Pranali_UK_Phone_no.csv",
+    "Records": 102,
+    "Valid": 73,
+    "Invalid": 29,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-17 12:05:55",
+    "File Name": "Priyanka_contact_No.csv",
+    "Records": 94,
+    "Valid": 75,
+    "Invalid": 19,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-16 20:43:54",
+    "File Name": "US_number.csv",
+    "Records": 178,
+    "Valid": 177,
+    "Invalid": 1,
+    "Status": "deleted"
+  },
+  {
+    "DateTime": "2025-04-16 20:32:16",
+    "File Name": "phone_number_Non_US.csv",
+    "Records": 353,
+    "Valid": 323,
+    "Invalid": 30,
+    "Status": "deleted"
+  }
+]

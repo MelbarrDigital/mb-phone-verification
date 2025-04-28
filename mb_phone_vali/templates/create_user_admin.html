@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <h2 class="text-2xl font-semibold text-blue-600 mb-4">Create New User</h2>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="mb-4 p-3 rounded bg-green-100 text-green-700 text-sm">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" action="{{ url_for('create_user_admin') }}" class="space-y-6">
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+      <input type="email" id="email" name="email" class="input-field h-40 w-full mt-1" required>
+    </div>
+
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+      <input type="text" id="name" name="name" class="input-field h-40 w-full mt-1" required>
+    </div>
+
+    <div>
+      <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+      <input type="password" id="password" name="password" class="input-field h-40 w-full mt-1" required>
+    </div>
+
+    <div>
+      <label for="credits" class="block text-sm font-medium text-gray-700">Assign Credits</label>
+      <input type="number" id="credits" name="credits" min="0" max="{{ available_credits }}" class="input-field h-40 w-full mt-1" required>
+    </div>
+
+    <div>
+      <label for="veriphone_access" class="block text-sm font-medium text-gray-700">Enable Veriphone Access</label>
+      <select id="veriphone_access" name="veriphone_access" class="input-field h-40 w-full mt-1">
+        <option value="true">Yes</option>
+        <option value="false" selected>No</option>
+      </select>
+    </div>
+
+    <div>
+      <button type="submit" class="btn-primary h-40">Create User</button>
+    </div>
+  </form>
+</div>
+
+<!-- User Table -->
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <h3 class="text-xl font-semibold text-gray-800 mb-4">Existing Users</h3>
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Credits</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Veriphone</th>
+          <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+          <th class="px-4 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        {% for user in users %}
+          {% if user.role != 'admin' %}
+            <tr>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-700">{{ user.name }}</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-700">{{ user.email }}</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-700">{{ user.credits }}</td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+                {% if user.veriphone_access %}✅{% else %}❌{% endif %}
+              </td>
+              <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-700">{{ user.role }}</td>
+              <td class="px-4 py-2 whitespace-nowrap text-center">
+                <a href="{{ url_for('edit_user', email=user.email) }}" class="text-blue-600 hover:text-blue-800">
+                  <i class="fas fa-edit"></i> Edit
+                </a>
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

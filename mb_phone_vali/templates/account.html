@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <h2 class="text-2xl font-semibold text-blue-600 mb-4">Account Settings</h2>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="mb-4 p-3 rounded bg-green-100 text-green-700 text-sm">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" action="{{ url_for('account') }}" class="space-y-6">
+    <!-- Username -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+      <input type="text" id="name" name="name" value="{{ session['user']['name'] }}" class="input-field w-full mt-1 h-40" required>
+    </div>
+
+    <!-- Email (read-only) -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Email</label>
+      <div class="mt-1 text-sm text-gray-900">{{ session['user']['email'] }}</div>
+    </div>
+
+    <!-- Veriphone Access -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Veriphone Access</label>
+      {% if session['user']['veriphone_access'] %}
+        <div class="mt-1 text-green-600 font-semibold">True</div>
+      {% else %}
+        <div class="mt-1 text-red-500">Contact admin to get real time validation access</div>
+      {% endif %}
+    </div>
+
+    {% if session['user']['veriphone_access'] %}
+    <!-- Credits -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Available Credits</label>
+      <div class="mt-1 text-blue-600 font-semibold">{{ session['user']['credits'] }}</div>
+    </div>
+    {% endif %}
+
+    {% if session['user']['role'] == 'admin' %}
+
+      <div class="mt-6 border-t border-b pt-4 pb-4">
+        <h3 class="text-sm font-medium text-gray-700 mb-1"><strong>Veriphone Admin Info</strong></h3>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li><strong>Plan:</strong> {{ veriphone_config.plan }}</li>
+          <li><strong>Monthly Limit:</strong> {{ veriphone_config.monthly_limit }}</li>
+          <li><strong>Credits Left:</strong> {{ veriphone_config.credits_left }}</li>
+          <li><strong>Last Updated:</strong> {{ veriphone_config.last_updated }}</li>
+        </ul>
+      </div>
+    {% endif %}
+
+    <!-- Change Password Link -->
+    <div>
+      <a href="{{ url_for('change_password') }}" class="text-blue-600 hover:underline text-sm">Change Password</a>
+    </div>
+
+    <!-- Save Button -->
+    <div>
+      <button type="submit" class="btn-primary w-100 h-40">Update</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

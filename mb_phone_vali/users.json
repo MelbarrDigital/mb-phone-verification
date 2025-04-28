@@ -1,0 +1,29 @@
+[
+  {
+    "email": "admin@mb.com",
+    "password": "scrypt:32768:8:1$auAPHebvF4CgZtlp$2f1f1946de5e07434c2111a75acb4b29c2cdcb26a96c513f1006d3bd909ea4c86b1ae82ecda274b98c812e2a5bd8d1cd7eaf6600f63a1e0e75449e8c5c67d8fa",
+    "name": "Omma Gaware",
+    "veriphone_access": true,
+    "credits": 999,
+    "role": "admin",
+    "last_login": "2025-04-22 14:36:43"
+  },
+  {
+    "email": "user@mb.com",
+    "name": "Mahera Nadaf",
+    "password": "scrypt:32768:8:1$auAPHebvF4CgZtlp$2f1f1946de5e07434c2111a75acb4b29c2cdcb26a96c513f1006d3bd909ea4c86b1ae82ecda274b98c812e2a5bd8d1cd7eaf6600f63a1e0e75449e8c5c67d8fa",
+    "veriphone_access": false,
+    "credits": 50,
+    "role": "local",
+    "last_login": "2025-04-18 17:50:08"
+  },
+  {
+    "email": "omkar@gmail.com",
+    "name": "Omkar G",
+    "password": "scrypt:32768:8:1$nk7b1eloUbQmH9yE$208febaa1baeb82535c59fa469dfde6105c3d0516783a79a2014f35ecc4c4664bf0490e712975bd02e022f381522b99ca29476e95077de692d98bf0b7cc26e01",
+    "veriphone_access": true,
+    "credits": 100,
+    "role": "local",
+    "last_login": ""
+  }
+]

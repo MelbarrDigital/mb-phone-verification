@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MB Phone Validator | Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f9;
+    }
+    .input-field {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .input-field:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    .btn-primary {
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-md">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-center text-blue-600 mb-2">MB Phone Validator</h2>
+      <p class="text-center text-gray-500 mb-6">Sign in to your account</p>
+
+      <form method="POST" action="{{ url_for('login') }}" class="space-y-4">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="text-red-600 text-sm">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" name="email" id="email" required class="input-field w-full mt-1">
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" name="password" id="password" required class="input-field w-full mt-1">
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <input id="remember-me" name="remember" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded">
+            <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
+          </div>
+          <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-primary w-full">Sign In</button>
+      </form>
+
+      <p class="text-center text-sm text-gray-500 mt-6">
+        Don't have an account? <a href="#" class="text-blue-600 font-medium hover:underline">Contact Admin</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

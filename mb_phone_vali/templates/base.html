@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MB Phone Validator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favion.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="flex h-screen overflow-hidden">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar flex flex-col">
+        <div class="p-4 flex items-center justify-start border-b border-slate-700">
+            <!-- <div class="w-8 h-8 rounded-md bg-white flex items-center justify-center text-blue-600 font-bold">
+                <i class="fas fa-mobile-alt"></i>
+            </div> -->
+            <img src="{{ url_for('static', filename='images/mb_phone_validation.png') }}" alt="">
+            <!-- <h1 class="ml-3 text-lg font-semibold">MB Phone Verification</h1> -->
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-4">
+            <div class="px-3 space-y-1">
+                <a href="{{ url_for('dashboard') }}" class="sidebar-item flex items-center px-3 py-2 text-sm font-medium">
+                    <i class="fas fa-tachometer-alt mr-3 w-5 text-center"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="{{ url_for('validate') }}" class="sidebar-item flex items-center px-3 py-2 text-sm font-medium">
+                    <i class="fas fa-mobile-alt mr-3 w-5 text-center"></i>
+                    <span>Phone Validation</span>
+                </a>
+                <a href="{{ url_for('bulk') }}" class="sidebar-item flex items-center px-3 py-2 text-sm font-medium">
+                    <i class="fas fa-tasks mr-3 w-5 text-center"></i>
+                    <span>Bulk Validation</span>
+                </a>
+            </div>
+        </div>
+
+          <!-- User Profile -->
+          <div class="p-4 border-t border-slate-700">
+            <div class="dropdown relative">
+                <button class="flex items-center w-full focus:outline-none">
+                    <div class="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center text-white">
+                        <i class="fas fa-user text-sm"></i>
+                    </div>
+                    <div class="ml-3 text-left">
+                        <p class="text-sm font-medium">{{ session['user']['name'] }}</p>
+                        <p class="text-xs text-slate-300">{{ session['user']['role'] | capitalize }}</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-xs ml-auto"></i>
+                </button>
+                
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu absolute bottom-full left-0 mb-2 w-full bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
+                    <a href="{{ url_for('account') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Profile</a>
+                    {% if session['user']['role'] == 'admin' %}
+                    <a href="{{ url_for('create_user_admin') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create User</a>
+                    <a href="{{ url_for('veriphone_admin') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Veriphone Settings</a>
+                    {% endif %}
+                    <a href="{{ url_for('change_password') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Change Password</a>                    
+                    <div class="border-t border-gray-200"></div>
+                    <a href="{{ url_for('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 overflow-auto bg-gray-50">
+        <header class="bg-white shadow-sm py-3 px-6 flex items-center justify-between sticky top-0 z-10">
+            <h2 class="text-lg font-semibold text-gray-800">Welcome, {{ session['user']['name'] }}👋</h2>
+            <div class="flex items-center space-x-4">
+                {% if session['user']['veriphone_access'] %}
+                <button class="p-2 text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fa-solid fa-credit-card"></i>
+                    {{ session['user']['credits'] }}
+                </button>
+                {% endif %}
+                <button class="p-2 text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="p-2 text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

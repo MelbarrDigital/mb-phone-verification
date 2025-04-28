@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <h2 class="text-2xl font-semibold text-blue-600 mb-4">Veriphone Configuration</h2>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="mb-4 p-3 rounded bg-green-100 text-green-700 text-sm">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" action="{{ url_for('veriphone_admin') }}" class="space-y-6">
+    <div>
+      <label for="api_key" class="block text-sm font-medium text-gray-700">API Key</label>
+      <input type="text" id="api_key" name="api_key" value="{{ config.api_key }}" class="input-field h-40 w-full mt-1" required>
+    </div>
+
+    <div>
+      <label for="plan" class="block text-sm font-medium text-gray-700">Plan Name</label>
+      <input type="text" id="plan" name="plan" value="{{ config.plan }}" class="input-field h-40 w-full mt-1">
+    </div>
+
+    <div>
+      <label for="monthly_limit" class="block text-sm font-medium text-gray-700">Monthly Limit</label>
+      <input type="number" id="monthly_limit" name="monthly_limit" value="{{ config.monthly_limit }}" class="input-field h-40 w-full mt-1">
+    </div>
+
+    <div>
+      <button type="submit" class="btn-primary h-40">Update Configuration</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
